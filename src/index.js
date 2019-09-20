@@ -10,5 +10,5 @@ app.use(bodyParser.json());
 app.use(routes);
 
 app.listen(config.PORT, () => {
-  console.log('server started...');
+  console.log(`server started at http://localhost:${config.PORT}`);
 });
