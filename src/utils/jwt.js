@@ -10,8 +10,6 @@ const generate = (data, expiresIn = '2h') => {
   }, config.secretKey, { expiresIn });
 };
 
-const decode = (token) => {
-  return jwt.verify(token, config.secretKey);
-};
+const decode = (token) => jwt.verify(token, config.secretKey);
 
 export { generate, decode };
