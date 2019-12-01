@@ -8,6 +8,12 @@ const User = {
   email: {
     type: DataTypes.STRING,
   },
+  username: {
+    type: DataTypes.STRING,
+  },
+  password: {
+    type: DataTypes.STRING,
+  },
   firstName: {
     type: DataTypes.STRING,
   },
