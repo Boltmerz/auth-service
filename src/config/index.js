@@ -6,6 +6,9 @@ const config = {
     port: process.env.PORT || 3000,
     secretKey: process.env.SECRET_KEY,
   },
+  bcrypt: {
+    saltRounds: 10,
+  },
   postgres: {
     host: process.env.PG_HOST,
     database: process.env.PG_DB,
