@@ -3,7 +3,8 @@ import { DataTypes } from 'sequelize';
 const User = {
   id: {
     primaryKey: true,
-    type: DataTypes.INTEGER,
+    type: DataTypes.UUID,
+    defaultValue: DataTypes.UUIDV4,
   },
   email: {
     type: DataTypes.STRING,
