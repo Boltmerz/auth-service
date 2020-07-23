@@ -7,7 +7,7 @@ const config = {
   },
   token: {
     expiresIn: process.env.TOKEN_EXPIRES_IN || '1h',
-    secretKey: process.env.SECRET_KEY,
+    secretKey: process.env.ACCESS_TOKEN_SECRET,
   },
   bcrypt: {
     saltRounds: 10,
