@@ -7,9 +7,9 @@ const generate = (data, expiresIn = '2h') => {
   } = data;
   return jwt.sign({
     firstName, lastName, email, birthDate, loginHash,
-  }, config.secretKey, { expiresIn });
+  }, config.app.secretKey, { expiresIn });
 };
 
-const decode = (token) => jwt.verify(token, config.secretKey);
+const decode = (token) => jwt.verify(token, config.app.secretKey);
 
 export { generate, decode };
