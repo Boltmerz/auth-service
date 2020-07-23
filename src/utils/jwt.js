@@ -1,13 +1,15 @@
 import jwt from 'jsonwebtoken';
 import config from '../config';
 
-const generate = (data, expiresIn = '2h') => {
+const generate = (data, expiresIn = config.token.expiresIn) => {
   const {
-    firstName, lastName, email, birthDate, loginHash,
+    id, firstName, lastName, email, birthDate, loginHash,
   } = data;
   return jwt.sign({
-    firstName, lastName, email, birthDate, loginHash,
-  }, config.app.secretKey, { expiresIn });
+    id, firstName, lastName, email, birthDate, loginHash,
+  },
+  config.token.secretKey,
+  { expiresIn });
 };
 
 const decode = (token) => jwt.verify(token, config.app.secretKey);

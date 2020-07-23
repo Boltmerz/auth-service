@@ -4,6 +4,9 @@ const config = {
   app: {
     env: process.env.NODE_ENV || 'DEV',
     port: process.env.PORT || 3000,
+  },
+  token: {
+    expiresIn: process.env.TOKEN_EXPIRES_IN || '1h',
     secretKey: process.env.SECRET_KEY,
   },
   bcrypt: {
