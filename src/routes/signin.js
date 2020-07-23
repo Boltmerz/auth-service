@@ -7,8 +7,6 @@ const signin = async (req, res) => {
     const token = await authenticateUser(username, password);
     return res.status(httpStatus.OK).json({ token });
   } catch (error) {
-    console.log('=================')
-    console.log(error.message)
     return res.status(error.status || httpStatus.INTERNAL_SERVER_ERROR).send(error.message);
   }
 };

@@ -6,12 +6,7 @@ import { UserUnauthorized } from '../../utils/Errors';
 
 export const authenticateUser = async (username, password) => {
   const user = await getUserByUsername(username);
-  console.log(`password: ${password}`);
-  console.log(`user: ${user.username}`);
-  console.log(`password: ${user.password}`);
-
   const isAuthenticated = validateHash(password, user.password);
-  console.log(`isAuthenticated: ${isAuthenticated}`);
 
   if (!user || !isAuthenticated) { throw new UserUnauthorized('Invalid Username/Password'); }
 
